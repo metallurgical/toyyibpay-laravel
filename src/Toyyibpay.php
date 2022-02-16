@@ -184,7 +184,7 @@ class Toyyibpay
 
         $data = [
             'form_params' => [
-                'billCode' => $code,
+                'billCode' => $billCode,
                 'billpaymentStatus' => $billpaymentStatus,
             ]
         ];
