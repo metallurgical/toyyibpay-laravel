@@ -174,4 +174,22 @@ class Toyyibpay
     {
         return $this->toyyibpay_uri .'/'. $bill_code;
     }
+    
+    #
+    # Toyyibpay Create Bill
+    #
+    public function getTransaction($billCode, $billpaymentStatus = null)
+    {
+        $url = $this->toyyibpay_uri.'/index.php/api/getBillTransactions';
+
+        $data = [
+            'form_params' => [
+                'billCode' => $code,
+                'billpaymentStatus' => $billpaymentStatus,
+            ]
+        ];
+
+        $res = $this->post($url, $data);
+        return $res;
+    }
 }
